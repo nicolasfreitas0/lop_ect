@@ -2,7 +2,7 @@ var x = 80;
 var y = 400
 
 function setup() {
-  createCanvas(512, 512);
+  createCanvas(500, 500);
 }
 
 function draw() {
