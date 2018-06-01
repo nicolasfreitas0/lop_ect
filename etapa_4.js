@@ -34,7 +34,7 @@ function draw() {
   if (inimx < 0){
     inimx = random(600,600); // movimentação aleatoria
    }
-   if (keyIsDown(ENTER) && (! disparo) ){ 
+   if (keyIsDown(32) && (! disparo) ){ 
     disparo = true; 
     inimdx = jogx; // disparo e jogador
     inimdy = jogy;
