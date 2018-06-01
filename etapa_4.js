@@ -28,7 +28,6 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)){
     jogy = jogy + 5;
   }
-  
     rect(inimx, 170, 40, 40); // retangulo
   inimx = inimx - 2; 
   if (inimx < 0){
@@ -46,6 +45,5 @@ function draw() {
       disparo = false;
     }
   }
-  
-                
+                 
 }
