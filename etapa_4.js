@@ -41,7 +41,7 @@ function draw() {
   }
   if (disparo) {
     ellipse(inimdx,inimdy,4,10) // propriedades do disparo
-    inimdy = inimdy - 10; 
+    inimdy = inimdy - 12; 
    	if ( inimdy < length ) {
       disparo = false;
     }
