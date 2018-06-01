@@ -17,7 +17,7 @@ function draw() {
     jogx = random(-500,-50) // aparecer na tela mais devagar
   }
   if (keyIsDown(LEFT_ARROW)){ 
-    x = x - 5;
+    jogx = jogx - 5;
   }
   if (keyIsDown(RIGHT_ARROW)){
     jogx = jogx + 5;
