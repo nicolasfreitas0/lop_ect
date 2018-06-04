@@ -7,6 +7,7 @@ var disparo = false;
 var vidas = 3;
 var pontos = 0;
 
+
 function setup() {
   createCanvas(500,500);
   frameRate(60);
@@ -35,10 +36,11 @@ function draw() {
   if (keyIsDown(DOWN_ARROW)){
     jogy = jogy + 5;
   }
-    rect(inimx, inimy, 40, 40); // retangulo
-    inimy = inimy + 2
-   if (inimx < 0){
-    inimx = random(500,500); // movimentação aleatoria
+    rect(10, inimy, 40, 40); // retangulo
+  	inimy = inimy + 0.8
+    
+   if (inimy > 500){
+    inimy= random(-10,-100); // movimentação aleatoria
    }
    if (keyIsDown(32) && (! disparo) ){ 
     disparo = true; 
