@@ -49,7 +49,7 @@ function draw() {
     ellipse(dispx,dispy,raio_disp,raio_disp) // propriedades do disparo
     dispy = dispy - 12;
    	if ( dist(dispx,dispy,inimx,inimy) < raio_inim ) {
-      inimy = 0;
+      inimy = -inimy;
       pontos = pontos + 100;
       disparo = false;
       if (colisao == false){
