@@ -38,7 +38,7 @@ function draw() {
   	inimy = inimy + 0.8
     
    if (inimy > 500){
-    inimy= random(-10,-200); // movimentação aleatoria
+    inimy= random(-50,-200); // movimentação aleatoria
    }
    if (keyIsDown(32) && (!disparo) ){ 
     disparo = true; 
@@ -51,7 +51,7 @@ function draw() {
    	if ( dist(dispx,dispy,inimx,inimy) < raio_inim ) {
       inimy = -inimy;
       pontos = pontos + 100;
-      disparo = false;
+      
       if (colisao == false){
         colisao = true;
       }
@@ -64,7 +64,10 @@ function draw() {
     jogx = 250;
     jogy = 470;
     vidas = vidas - 1;
-  }   
+  	if (vidas == 0){
+      alert("GAME OVER")
+    }
+  } 
   textSize(24) // texto
   fill('red');
   text("Vidas: "+vidas, 10, 35);
