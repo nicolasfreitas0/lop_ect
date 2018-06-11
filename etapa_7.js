@@ -64,16 +64,10 @@ function draw() {
   }
   if (keyIsDown(RIGHT_ARROW)){
     jogx = jogx + 5;
-  }
-  if (keyIsDown(UP_ARROW)){
-    jogy = jogy - 5;
-  }
-  if (keyIsDown(DOWN_ARROW)){
-    jogy = jogy + 5;
-  }
+  } 
     fill("green")
     rect(inimx, inimy, raio_inim, raio_inim); // inimigo
-  	inimy = inimy + 0.8
+  	inimy = inimy + 1
     
    if (inimy > 500){
     inimy= random(-50,-200); // movimentação aleatoria
