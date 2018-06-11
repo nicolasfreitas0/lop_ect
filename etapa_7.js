@@ -99,7 +99,8 @@ function draw() {
  	  }
 	}
   	if (dist(inimx,inimy,jogx,jogy) < 40){
-    	jogx = 250;
+    	inimy = -inimy
+      	jogx = 250;
     	jogy = 470;
     	vidas = vidas - 1;
   	}
