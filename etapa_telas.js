@@ -67,19 +67,19 @@ function draw() {
         colisao = true;
       }
     }
-   	 if ( inimy < length ) {
-      disparo = false;
-  }
-}
-  if (dist(inimx,inimy,jogx,jogy) < 40){
-    jogx = 250;
-    jogy = 470;
-    vidas = vidas - 1;
+   	  if ( inimy < length ) {
+      	disparo = false;
+ 	  }
+	}
+  	if (dist(inimx,inimy,jogx,jogy) < 40){
+    	jogx = 250;
+    	jogy = 470;
+    	vidas = vidas - 1;
   	}
-    textSize(24) // texto
-  	fill('red');
-  	text("Vidas: "+vidas, 10, 35);
-  	text("Pontuação: "+pontos, 330, 35);
+textSize(24) // texto
+fill('red');
+text("Vidas: "+vidas, 10, 35);
+text("Pontuação: "+pontos, 330, 35);
     
     if (vidas == 0){
       tela = 3;
@@ -87,7 +87,7 @@ function draw() {
   }
     if (tela == 3){
       	textSize(36); 
-		fill(200);
-		text("Fim de jogo", 5, 250);
+		fill("red");
+		text("GAME OVER",150, 250);
     }
 }
