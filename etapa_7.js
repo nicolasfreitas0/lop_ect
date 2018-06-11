@@ -22,10 +22,10 @@ function setup() {
   createCanvas(500,500);
   frameRate(60);
   for (i = 0; i < qtEstrelas; i++) {
-		estrelasX[i] = random(0,width);
-		estrelasY[i] = random(0,height); 
-		estrelasVel[i] = 2+random(0,12)/10; 
-		estrelasTam[i] = random(2,4); 
+	estrelasX[i] = random(0,width);
+	estrelasY[i] = random(0,height); 
+	estrelasVel[i] = 2+random(0,12)/10; 
+	estrelasTam[i] = random(2,4); 
   }
 }
 
@@ -33,10 +33,10 @@ function draw() {
   background(0); // fundo cor
   if (tela == 1){
     textSize(36);
-		fill("red");
-		text("Pressione Enter para Começar", 5, 250);
-		if ( keyIsDown(13) ) {
-			tela = 2; 
+    fill("red");
+    text("Pressione Enter para Começar", 5, 250);
+	if ( keyIsDown(13) ) {
+	   tela = 2; 
         }
     }
   if ( tela == 2 ) {	
@@ -50,7 +50,7 @@ function draw() {
   for(i = 0; i < qtEstrelas; i++) { 	// movimenta as estrelas aleatoriamente
 	  estrelasY[i] = estrelasY[i] + estrelasVel[i]; 
 	  if (estrelasY[i] > height) {
-		estrelasX[i] = random(0,width);
+	 	estrelasX[i] = random(0,width);
 		estrelasY[i] = -random(0,height); 		  
 	  }
   }
