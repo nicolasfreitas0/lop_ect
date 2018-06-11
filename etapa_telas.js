@@ -62,10 +62,9 @@ function draw() {
    	if ( dist(dispx,dispy,inimx,inimy) < raio_inim ) {
       inimy = -inimy;
       pontos = pontos + 100;
-      
+	}
       if (colisao == false){
         colisao = true;
-      }
     }
    	  if ( inimy < length ) {
       	disparo = false;
