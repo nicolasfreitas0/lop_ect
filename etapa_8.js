@@ -132,6 +132,15 @@ text("Pontuação: "+pontos, 330, 35);
     if (tela == 3){
 textSize(36); 
 fill("red");
-text("GAME OVER",150, 250);
+text("GAME OVER",175, 250);
   }
+  	if(pontos == 3000){
+    tela = 4;
+  }
+  	if(tela == 4){
+textSize(36); 
+fill("red");
+text("YOU WIN",175, 250);
+  }
+    
 }
