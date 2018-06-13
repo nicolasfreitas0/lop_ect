@@ -105,16 +105,17 @@ function draw() {
    	if ( dist(dispx,dispy,inimx,inimy) < raio_inim ) {
       inimy = -inimy;
       pontos = pontos + 100;
+      disparo = false;
 	}
       if (colisao == false){
         colisao = true;
     }
-   	  if ( inimy < length ) {
+   	  if ( dispy < length ) {
       	disparo = false;
  	  }
 	}
   	if (dist(inimx,inimy,jogx,jogy) < 40){
-    	inimy = -inimy
+    	inimy = - inimy;
       	jogx = 250;
     	jogy = 470;
     	vidas = vidas - 1;
