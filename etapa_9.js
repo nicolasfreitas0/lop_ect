@@ -137,7 +137,7 @@ function draw() {
     }
     for(i = 0; i < qtInim; i++) {
   	if (dist(inimx[i],inimy[i],jogx,jogy) < 40){
-    	inimy = - inimy;
+    	inimy[i] = - inimy[i];
       	jogx = 250;
     	jogy = 470;
     	vidas = vidas - 1;
