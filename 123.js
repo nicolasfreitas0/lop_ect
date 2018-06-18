@@ -1,19 +1,18 @@
-var estrelasX = [];
-var estrelasY = [];
-var estrelasVel = [];
-var estrelasTam = [];    
-
-var qtEstrelas = 5; 
+var inimx = [];
+var inimy = [];
+var inimVel = [];
+var raio = 40;    
+var qtInim = 4; 
 
 // os códigos de "setup" só executam uma vez 
 function setup() {
 	createCanvas(500, 500); 
 	frameRate(30);   
-	for (i = 0; i < qtEstrelas; i++) {
-		estrelasX[i] = random(0,500);
-		estrelasY[i] = random(0,500); 
-		estrelasVel[i] = 2+random(0,10)/8; 
-		estrelasTam[i] = random(40,40); 
+	for (i = 0; i < qtInim; i++) {
+		inimx[i] = random(0,500);
+		inimy[i] = random(-40,-40); 
+		inimVel[i] = 1.2+random(0,10)/6; 
+		 
 	} 
 }
 
@@ -22,16 +21,16 @@ function draw() {
   background(0); 
 
   // desenha objetos 
-  for(i = 0; i < qtEstrelas; i++) {
-	  rect(estrelasX[i],estrelasY[i],estrelasTam[i],estrelasTam[i])
+  for(i = 0; i < qtInim; i++) {
+	  rect(inimx[i],inimy[i],raio,raio)
   }
   
   // movimenta objetos 
-  for(i = 0; i < qtEstrelas; i++) { 
-	  estrelasY[i] = estrelasY[i] + estrelasVel[i]; 
-	  if (estrelasY[i] > height) {
-		estrelasX[i] = random(0,500);
-		estrelasY[i] = -random(0,500); 		  
+  for(i = 0; i < qtInim; i++) { 
+	  inimy[i] = inimy[i] + inimVel[i]; 
+	  if (inimy[i] >= height) {
+		inimx[i] = random(0,500);
+		inimy[i] = -random(0,500); 		  
 	  }
   }
   
