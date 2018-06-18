@@ -35,7 +35,7 @@ function setup() {
   for (i = 0; i < qtInim; i++) {
 		inimx[i] = random(0,500);
 		inimy[i] = random(-40,-40); 
-		inimVel[i] = 1+random(0,10)/10; 
+		inimVel[i] = 1.2+random(0,10)/10; 
 	} 
 }
 
