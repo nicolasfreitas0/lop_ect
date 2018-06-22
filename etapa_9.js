@@ -42,6 +42,18 @@ function setup() {
 function draw() {
   background(0); // fundo cor
   if (tela == 1){
+    for(i = 0; i < qtEstrelas; i++) {    // desenha as estrelas na tela
+	  rect(estrelasX[i],estrelasY[i],estrelasTam[i],estrelasTam[i])
+  }
+  
+  
+  for(i = 0; i < qtEstrelas; i++) { 	// movimenta as estrelas aleatoriamente
+	  estrelasY[i] = estrelasY[i] + estrelasVel[i]; 
+	  if (estrelasY[i] > height) {
+	 	estrelasX[i] = random(0,width);
+		estrelasY[i] = -random(0,height); 		  
+	  }
+  }
     textSize(36);
     fill("red");
     text("Pressione Enter para Começar", 5, 250);
@@ -156,8 +168,14 @@ text("Pontuação: "+pontos, 330, 35);
     if (tela == 3){
 textSize(36); 
 fill("red");
-text("GAME OVER",175, 250);
-  }
+text("GAME OVER",157, 250);
+  	textSize(12);
+    fill("red");
+    text("Pressione Enter para jogar novamente", 160, 270);
+	if ( keyIsDown(13) ) {
+	   tela = 1; 
+        }
+    }
   	if(pontos == 3000){
     tela = 4;
   }
