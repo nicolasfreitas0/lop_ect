@@ -116,7 +116,7 @@ function draw() {
   if (disparo) {
     fill("yellow")
     ellipse(dispx,dispy,raio_disp,raio_disp) // propriedades do disparo
-    dispy = dispy - 12;
+    dispy = dispy - 9;
   }
     if (disparo) {
     for(i = 0;i < 2*nivel; i++){
