@@ -14,7 +14,9 @@ var inimx = [];
 var inimy = [];
 var inimVel = [];
 var raio = 40;    
-var qtInim = 4; 
+var qtInim = 16; 
+var nivel = 1;
+var limitedepontos = 2;
 var tela = 1;
 var estrelasX = [];
 var estrelasY = [];
@@ -32,7 +34,7 @@ function setup() {
 	estrelasVel[i] = 2+random(0,12)/10; 
 	estrelasTam[i] = random(2,4); 
   	}
-  for (i = 0; i < qtInim; i++) {
+  for (i = 0; i < 16; i++) {
 		inimx[i] = random(0,500);
 		inimy[i] = random(-40,-40); 
 		inimVel[i] = 1.2+random(0,10)/10; 
@@ -76,23 +78,7 @@ function draw() {
 		estrelasY[i] = -random(0,height); 		  
 	  }
   }
-    // NIVEIS
-    if(pontos < 1000){
-      textSize(28)
-      text("LEVEL 1",175,35)
-      }
-    if(pontos >= 1000 && pontos < 2000){
-      inimVel[i] = 1.6+random(0,10)/6;
-      textSize(28)
-      text("LEVEL 2",175,35)
-      }
-    if(pontos >= 2000){
-      inimVel[i] = 2+random(0,10)/6;
-      textSize(28)
-      text("LEVEL 3",175,35)
-      }
-      
-      
+    
     // JOGADOR
     fill("blue")
     ellipse(jogx, jogy, raio_jog, raio_jog); //jogador
@@ -110,10 +96,10 @@ function draw() {
   }
     // INIMIGO
     fill("green")
-    for(i = 0; i < qtInim; i++){
+    for(i = 0; i < 2*nivel; i++){
     rect(inimx[i], inimy[i], raio_inim, raio_inim); // inimigo
     }
-    for(i = 0; i < qtInim; i++) { 
+    for(i = 0; i < 2*nivel; i++) { 
 	  inimy[i] = inimy[i] + inimVel[i]; 
 	  if (inimy[i] >= height) {
 		inimx[i] = random(0,500);
@@ -133,10 +119,10 @@ function draw() {
     dispy = dispy - 12;
   }
     if (disparo) {
-    for(i = 0;i < qtInim; i++){
+    for(i = 0;i < 2*nivel; i++){
    	if ( dist(dispx,dispy,inimx[i],inimy[i]) < raio_inim ) {
       inimy[i] = -70;
-      pontos = pontos + 100;
+      pontos=pontos+1;
       disparo = false;
 	}
       if (colisao == false){
@@ -147,7 +133,7 @@ function draw() {
  	  }
 	}
     }
-    for(i = 0; i < qtInim; i++) {
+    for(i = 0; i < 2*nivel; i++) {
   	if (dist(inimx[i],inimy[i],jogx,jogy) < 40){
     	inimy[i] = - inimy[i];
       	jogx = 250;
@@ -157,9 +143,19 @@ function draw() {
   }
 textSize(24) // texto
 fill('red');
-text("Vidas: "+vidas, 10, 35);
+text("Vidas: "+ vidas, 10, 35);
 text("Pontuação: "+pontos, 330, 35);
+text("Fase: " + nivel,175,35);    
+    if(pontos  == limitedepontos){
+      nivel = nivel +1;
+      limitedepontos = limitedepontos + (2*nivel)
 
+for (i = 0; i < 2*(nivel-1); i++) {
+		inimx[i] = random(0,500);
+		inimy[i] = random(-40,-40); 
+		inimVel[i] = 1.2+random(0,10)/10; 
+	} 
+ }     
     
     if (vidas == 0){
       tela = 3;
@@ -176,7 +172,7 @@ text("GAME OVER",157, 250);
 	   tela = 1; 
         }
     }
-  	if(pontos == 3000){
+  	if(pontos == 300){
     tela = 4;
   }
   	if(tela == 4){
