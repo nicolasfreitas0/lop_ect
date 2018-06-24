@@ -14,9 +14,9 @@ var inimx = [];
 var inimy = [];
 var inimVel = [];
 var raio = 40;    
-var qtInim = 16; 
+var qtInim = 8; 
 var nivel = 1;
-var limitedepontos = 2;
+var limitedepontos = 10;
 var tela = 1;
 var estrelasX = [];
 var estrelasY = [];
@@ -34,7 +34,7 @@ function setup() {
 	estrelasVel[i] = 2+random(0,12)/10; 
 	estrelasTam[i] = random(2,4); 
   	}
-  for (i = 0; i < 16; i++) {
+  for (i = 0; i < 8; i++) {
 		inimx[i] = random(0,500);
 		inimy[i] = random(-40,-40); 
 		inimVel[i] = 1.2+random(0,10)/10; 
@@ -148,7 +148,7 @@ text("Pontuação: "+pontos, 330, 35);
 text("Fase: " + nivel,175,35);    
     if(pontos  == limitedepontos){
       nivel = nivel +1;
-      limitedepontos = limitedepontos + (2*nivel)
+      limitedepontos = limitedepontos + (10*nivel)
 
 for (i = 0; i < 2*(nivel-1); i++) {
 		inimx[i] = random(0,500);
@@ -172,7 +172,7 @@ text("GAME OVER",157, 250);
 	   tela = 1; 
         }
     }
-  	if(pontos == 300){
+  	if(pontos == 100){
     tela = 4;
   }
   	if(tela == 4){
